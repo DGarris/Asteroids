@@ -9,6 +9,7 @@ class Player(CircleShape):
         self.rotation = 0
         self.image = pygame.Surface((self.radius * 2, self.radius * 2), pygame.SRCALPHA)  # Create a surface for the player
         self.rect = self.image.get_rect(center=self.position)  # Set rect based on position
+        self.position = pygame.Vector2(x,y)
 
         
     def triangle(self):

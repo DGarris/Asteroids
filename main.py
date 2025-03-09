@@ -4,6 +4,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+import sys
 
 
 updateables_group = pygame.sprite.Group()
@@ -37,6 +38,12 @@ def main():
         for drawable in drawables_group:
             drawable.draw(screen)
         updateables_group.update(dt)
+        for asteriod in asteroids_group:
+            if player.collision(asteriod) == True:
+                print("Game over!")
+                sys.exit()
+
+
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
